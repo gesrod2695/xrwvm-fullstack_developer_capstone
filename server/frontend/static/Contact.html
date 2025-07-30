@@ -1,0 +1,135 @@
+<html>
+<head>
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="/static/bootstrap.min.css">
+  <style>
+    .contact-container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+    .contact-header {
+      text-align: center;
+      padding: 40px 20px;
+      background-color: #f8f9fa;
+      margin-bottom: 30px;
+      border-radius: 8px;
+    }
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: space-around;
+    }
+    .contact-card {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 30px;
+      min-width: 300px;
+      flex: 1;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .contact-card h3 {
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+    .contact-item {
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+    }
+    .contact-item strong {
+      display: inline-block;
+      width: 80px;
+      color: #34495e;
+    }
+  </style>
+</head>
+<body>
+<div>
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color:darkturquoise; height: 1in;">
+    <div class="container-fluid">
+      <h2 style="padding-right: 5%;">Dealerships</h2>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" style="font-size: larger;" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="font-size: larger;" href="/about">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" style="font-size: larger;" href="/contact">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+ 
+  <div class="contact-container">
+    <div class="contact-header">
+      <h1>Contact Us</h1>
+      <p>Get in touch with Best Cars dealership. We're here to help you find your perfect car!</p>
+    </div>
+    
+    <div class="contact-info">
+      <div class="contact-card">
+        <h3>📍 Visit Our Showroom</h3>
+        <div class="contact-item">
+          <strong>Address:</strong>
+          <span>123 Car Avenue<br>Charlotte, NC 28202</span>
+        </div>
+        <div class="contact-item">
+          <strong>Hours:</strong>
+          <span>Mon-Fri: 9:00 AM - 8:00 PM<br>
+                Sat: 9:00 AM - 6:00 PM<br>
+                Sun: 12:00 PM - 5:00 PM</span>
+        </div>
+      </div>
+      
+      <div class="contact-card">
+        <h3>📞 Get In Touch</h3>
+        <div class="contact-item">
+          <strong>Phone:</strong>
+          <span>(704) 555-CARS</span>
+        </div>
+        <div class="contact-item">
+          <strong>Email:</strong>
+          <span>info@bestcars.com</span>
+        </div>
+        <div class="contact-item">
+          <strong>Sales:</strong>
+          <span>sales@bestcars.com</span>
+        </div>
+        <div class="contact-item">
+          <strong>Service:</strong>
+          <span>service@bestcars.com</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="contact-card" style="margin-top: 30px;">
+      <h3>🚗 Our Services</h3>
+      <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+        <div style="flex: 1; min-width: 200px;">
+          <h5>Sales Department</h5>
+          <p>New and used car sales, financing options, trade-in evaluations</p>
+        </div>
+        <div style="flex: 1; min-width: 200px;">
+          <h5>Service Department</h5>
+          <p>Maintenance, repairs, warranty service, genuine parts</p>
+        </div>
+        <div style="flex: 1; min-width: 200px;">
+          <h5>Finance Department</h5>
+          <p>Auto loans, leasing, insurance, extended warranties</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,7 +1,47 @@
 <html>
 <head>
-  <!-- Link the style sheet here -->
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="/static/bootstrap.min.css">
+  <style>
+    .team-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin: 30px auto;
+      max-width: 1200px;
+    }
+    .person-card {
+      width: 300px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .person-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+    .card-body {
+      padding: 20px;
+      text-align: center;
+    }
+    .title {
+      font-weight: bold;
+      font-size: 1.2em;
+      margin-bottom: 5px;
+    }
+    .about-header {
+      text-align: center;
+      padding: 40px 20px;
+      background-color: #f8f9fa;
+      margin-bottom: 30px;
+    }
+  </style>
 </head>
+<body>
 <div>
   <nav class="navbar navbar-expand-lg navbar-light" style="background-color:darkturquoise; height: 1in;">
     <div class="container-fluid">
@@ -24,45 +64,43 @@
       </div>
     </div>
   </nav>
+ 
+  <div class="about-header">
+    <h1>About Us</h1>
+    <p>Welcome to Best Cars dealership, home to the best cars in North America. We deal in sale of domestic and imported cars at reasonable prices.</p>
+  </div>
   
-    <div class="card" style="width: 80%;margin: auto; margin-top:5%;">
-      <div class="banner" name="about-header">
-      <!-- Insert header information here -->
+  <div class="team-container">
+    <div class="person-card">
+      <img src="https://cdn.pixabay.com/photo/2019/08/14/15/25/woman-4406012_1280.jpg" alt="Sarah Johnson">
+      <div class="card-body">
+        <p class="title">Sarah Johnson</p>
+        <p><strong>Sales Manager</strong></p>
+        <p class="card-text">Sarah has 8 years of experience in automotive sales and specializes in luxury vehicles.</p>
+        <p>sarah.johnson@bestcars.com</p>
       </div>
-      <div style="display: flex;flex-direction: row; margin:auto">
-      <div class="card" style="width: 30%;">
-        <img class="card-img-top" src="/static/person.png" alt="Card image">
-        <div class="card-body">
-          <p class="title">Person1</p>
-          <p>Person1 Title</p>
-          <p class="card-text">Some text that explains the person1 in about 2 short sentences</p>
-          <p>person1@example.com</p>
-        </div>
-      </div>
-
-      <div class="card" style="width: 30%;">
-        <img class="card-img-top" src="/static/person.png" alt="Card image">
-        <div class="card-body">
-          <p class="title">Person2</p>
-          <p>Person2 Title</p>
-          <p class="card-text">Some text that explains the person2 in about 2 short sentences</p>
-          <p>person2@example.com</p>
-        </div>
-      </div>
-
-      <div class="card" style="width: 30%;">
-        <img class="card-img-top" src="/static/person.png" alt="Card image">
-        <div class="card-body">
-          <p class="title">Person3</p>
-          <p>Person3 Title</p>
-          <p class="card-text">Some text that explains the person3 in about 2 short sentences</p>
-          <p>person3@example.com</p>
-        </div>
-      </div>
-    </div>
-    </div>
     </div>
     
+    <div class="person-card">
+      <img src="https://cdn.pixabay.com/photo/2024/01/10/16/22/man-8499961_1280.jpg" alt="Mike Rodriguez">
+      <div class="card-body">
+        <p class="title">Mike Rodriguez</p>
+        <p><strong>Service Manager</strong></p>
+        <p class="card-text">Mike ensures all our vehicles meet the highest quality standards with 10 years of automotive expertise.</p>
+        <p>mike.rodriguez@bestcars.com</p>
+      </div>
+    </div>
+    
+    <div class="person-card">
+      <img src="https://cdn.pixabay.com/photo/2023/11/10/02/30/woman-8378634_1280.jpg" alt="Jennifer Lee">
+      <div class="card-body">
+        <p class="title">Jennifer Lee</p>
+        <p><strong>Finance Director</strong></p>
+        <p class="card-text">Jennifer helps customers find the best financing options for their dream cars with personalized service.</p>
+        <p>jennifer.lee@bestcars.com</p>
+      </div>
+    </div>
+  </div>
 </div>
-
+</body>
 </html>
