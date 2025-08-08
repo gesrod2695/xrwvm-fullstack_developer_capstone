@@ -1,23 +1,20 @@
-# Uncomment the following imports before adding the Model code
+# Fixed version for your server/djangoapp/models.py file
+
 from django.db import models
 from django.utils.timezone import now
 from django.core.validators import MaxValueValidator, MinValueValidator
 
-# Create your models here.
-
-# Create a Car Make model `class CarMake(models.Model)`:
 class CarMake(models.Model):
     name = models.CharField(max_length=100, help_text='Enter car make name (e.g. BMW, Toyota)')
     description = models.TextField(max_length=1000, help_text='Enter a brief description of the car make')
     
-    # Additional fields you might want to include
+    # Additional fields
     founded_year = models.IntegerField(null=True, blank=True, help_text='Year the company was founded')
     headquarters = models.CharField(max_length=100, null=True, blank=True, help_text='Company headquarters location')
     
     def __str__(self):
         return self.name  # Return the name when printed
 
-# Create a Car Model model `class CarModel(models.Model):`:
 class CarModel(models.Model):
     # Type choices for the car model
     SEDAN = 'Sedan'
@@ -38,7 +35,7 @@ class CarModel(models.Model):
         (TRUCK, 'Truck'),
     ]
     
-    # Many-To-One relationship to Car Make model (One Car Make has many Car Models)
+    # Many-To-One relationship to Car Make model
     car_make = models.ForeignKey(CarMake, on_delete=models.CASCADE)
     
     # Dealer ID (refers to dealer in external database)
@@ -49,13 +46,13 @@ class CarModel(models.Model):
     
     # Type with limited choices
     type = models.CharField(
-        max_length=20, 
-        choices=CAR_TYPES, 
+        max_length=20,
+        choices=CAR_TYPES,
         default=SEDAN,
         help_text='Select car type'
     )
     
-    # Year with min value 2015 and max value 2023
+    # Year as IntegerField (not DateField as the lab requires)
     year = models.IntegerField(
         default=2023,
         validators=[
@@ -65,7 +62,7 @@ class CarModel(models.Model):
         help_text='Enter year (2015-2023)'
     )
     
-    # Additional 
+    # Additional fields
     color = models.CharField(max_length=50, null=True, blank=True, help_text='Car color')
     mileage = models.IntegerField(default=0, help_text='Car mileage')
     price = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True, help_text='Car price')

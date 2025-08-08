@@ -1,4 +1,3 @@
-# Uncomment the required imports before adding the code
 
 from django.shortcuts import render
 from django.http import HttpResponseRedirect, HttpResponse
@@ -7,22 +6,18 @@ from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib.auth import logout
 from django.contrib import messages
 from datetime import datetime
-
 from django.http import JsonResponse
 from django.contrib.auth import login, authenticate
 import logging
 import json
 from django.views.decorators.csrf import csrf_exempt
 from .populate import initiate
+from .models import CarMake, CarModel
 
 
-# Get an instance of a logger
 logger = logging.getLogger(__name__)
 
 
-# Create your views here.
-
-# Create a `login_request` view to handle sign in request
 @csrf_exempt
 def login_user(request):
     # Get username and password from request.POST dictionary
@@ -54,14 +49,13 @@ def registration(request):
     last_name = data['lastName']
     email = data['email']
     password = data['password']
-    
+   
     username_exist = False
     try:
         User.objects.get(username=username)
         username_exist = True
     except:
         logger.debug("{} is new user".format(username))
-
     if not username_exist:
         user = User.objects.create_user(username=username, first_name=first_name, last_name=last_name, email=email, password=password)
         login(request, user)
@@ -71,7 +65,19 @@ def registration(request):
         data = {"userName": username, "error": "Already Registered"}
         return JsonResponse(data)
 
-# # Update the `get_dealerships` view to render the index page with
+# Create get_cars view
+def get_cars(request):
+    count = CarMake.objects.filter().count()
+    print(count)
+    if(count == 0):
+        initiate()
+    car_models = CarModel.objects.select_related('car_make')
+    cars = []
+    for car_model in car_models:
+        cars.append({"CarModel": car_model.name, "CarMake": car_model.car_make.name})
+    return JsonResponse({"CarModels": cars})
+
+# Update the `get_dealerships` view to render the index page with
 # a list of dealerships
 # def get_dealerships(request):
 # ...
