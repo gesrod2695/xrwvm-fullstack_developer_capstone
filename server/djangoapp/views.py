@@ -93,9 +93,10 @@ def get_dealer_reviews(request, dealer_id):
 
 # Create a `get_dealer_details` view to render the dealer details
 def get_dealer_details(request, dealer_id):
-    endpoint = "/fetchDealer/"+str(dealer_id)
-    dealership = get_request(endpoint)
-    return JsonResponse({"status":200,"dealer":dealership})
+    """Get details for a specific dealer by ID"""
+    endpoint = "/fetchDealer/" + str(dealer_id)
+    dealer_details = get_request(endpoint)
+    return JsonResponse({"status": 200, "dealer": dealer_details})
 
 # Create a `add_review` view to submit a review
 def add_review(request):
